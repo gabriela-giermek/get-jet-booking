@@ -100,4 +100,125 @@ class Get_Jet_Booking_Admin {
 
 	}
 
+	/**
+	 * Add admin menu
+	 *
+	 * @since    1.0.0
+	 */
+	public function admin_menu() {
+
+		// Top-Level Menu
+		add_menu_page(
+			'GetJet Booking',
+			'GetJet Booking',
+			'manage_options',
+			'get-jet-booking-forms',
+			array( $this, 'admin_booking_forms_page' ),
+			'dashicons-airplane',
+			30
+		);
+
+		// Sub-Menus
+		add_submenu_page(
+			'get-jet-booking-forms',
+			'Booking forms',
+			'Booking forms',
+			'manage_options',
+			'get-jet-booking-forms',
+			array( $this, 'admin_booking_forms_page' ),
+		);
+
+		add_submenu_page(
+			'get-jet-booking-forms',
+			'Reservations',
+			'Reservations',
+			'manage_options',
+			'get-jet-booking-reservations',
+			array( $this, 'admin_reservations_page' ),
+		);
+
+		add_submenu_page(
+			'get-jet-booking-forms',
+			'Settings',
+			'Settings',
+			'manage_options',
+			'get-jet-booking-settings',
+			array( $this, 'admin_settings_page' ),
+		);
+
+		add_submenu_page(
+			'get-jet-booking-forms',
+			'Reports',
+			'Reports',
+			'manage_options',
+			'get-jet-booking-reports',
+			array( $this, 'admin_reports_page' ),
+		);
+
+		add_submenu_page(
+			'get-jet-booking-forms',
+			'Informations',
+			'Info',
+			'manage_options',
+			'get-jet-booking-info',
+			array( $this, 'admin_info_page' ),
+		);
+
+	}
+
+	/**
+	 * Displays a page with booking forms
+	 *
+	 * @since    1.0.0
+	 */
+	public function admin_booking_forms_page() {
+
+		include 'views/get-jet-booking-forms-page.php';
+
+	}
+
+	/**
+	 * Displays a page with booking forms
+	 *
+	 * @since    1.0.0
+	 */
+	public function admin_reservations_page() {
+
+		include 'views/get-jet-reservations-page.php';
+
+	}
+
+	/**
+	 * Displays a page with settings
+	 *
+	 * @since    1.0.0
+	 */
+	public function admin_settings_page() {
+
+		include 'views/get-jet-settings-page.php';
+
+	}
+
+	/**
+	 * Displays a page with reports
+	 *
+	 * @since    1.0.0
+	 */
+	public function admin_reports_page() {
+
+		include 'views/get-jet-reports-page.php';
+
+	}
+
+	/**
+	 * Displays a page with informations
+	 *
+	 * @since    1.0.0
+	 */
+	public function admin_info_page() {
+
+		include 'views/get-jet-info-page.php';
+
+	}
+
 }

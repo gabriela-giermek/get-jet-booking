@@ -37,6 +37,13 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'GET_JET_BOOKING_VERSION', '1.0.0' );
 
 /**
+ * Plugin base dir path.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * used to locate plugin resources primarily code files
+ */
+define( 'GET_JET_BOOKING_BASE_DIR', plugin_dir_path( __FILE__ ) );
+
+/**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-get-jet-booking-activator.php
  */
